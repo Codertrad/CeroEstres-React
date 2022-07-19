@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import BurguerButton from './BurguerButton'
+import CartWidget from './CartWidget'
+import logoCero from '../../images/logo_cero.png'
 
 
 function Navbar() {
@@ -14,12 +16,13 @@ function Navbar() {
   return (
    <>
    <NavContainer>
-      <h2>Navbar <span>Responsive</span></h2>
+      <img src={logoCero} className='logoPage' alt=''/>
       <div className={`links ${clicked ? 'active' : '' }`}>
          <a onClick={handleClick} href="#h">Inicio</a>
          <a onClick={handleClick} href="#h">Planes turisticos</a>
          <a onClick={handleClick} href="#h">Actividades</a>
-         <a onClick={handleClick} href="#h">Tienda</a>
+         <a onClick={handleClick} href="#h">Blog</a>
+         <CartWidget handleClick = {handleClick}/>
       </div>
       <div className='burguer'>
          <BurguerButton clicked={clicked} handleClick={handleClick}/>
@@ -33,18 +36,17 @@ function Navbar() {
 export default Navbar
 
 const NavContainer = styled.nav `
-   h2{
-      font-weight: 400;
-      color:white;
-      span{
-         font-weight: bold;
-      }
+   .logoPage{
+      width: 6rem ;
+      position: relative;
+      top: 1.5rem;
    }
-   padding: .4rem;
+   padding: .4rem 2rem;
    background-color: #333;
    display: flex;
    align-items: center;
    justify-content: space-between;
+   //margin: 0 3rem;
 
    a{
       color: white;
@@ -69,7 +71,7 @@ const NavContainer = styled.nav `
          position: initial;
          margin: 0;
          a{
-            font-size: 1rem;
+            font-size: 1.3rem;
             color: white;
             display: inline;
          }
