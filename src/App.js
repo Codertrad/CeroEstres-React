@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      <ItemListContainer greeting = ' Hola bienvenidos a mi aplicacion web '/>
+      <ItemListContainer greeting = ' Hola bienvenidos a mi aplicacion web '/> 
     </>
   );
 }
